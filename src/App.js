@@ -10,7 +10,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<GenerateCertificate />} />
-          <Route path="/certificate" element={<Certificate />} />
+          <Route path="/certificate-status-page" element={<Certificate />} />
         </Routes>
       </Layout>
     </BrowserRouter>
