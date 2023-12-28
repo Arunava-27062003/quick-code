@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "./generateCertificate.css";
 
 function GenerateCertificate() {
   const [details, setDetails] = useState({
@@ -34,8 +35,8 @@ function GenerateCertificate() {
         if (data.success === true) {
           navigate("/certificate-status-page");
         } else {
-          console.log(data);
-          alert("Something went wrong");
+          // console.log(data);
+          alert(data.message);
         }
       })
       .catch((err) => console.log(err));
@@ -57,13 +58,13 @@ function GenerateCertificate() {
           padding: "20px",
           borderRadius: "8px",
           boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
-          maxWidth: "400px", // Limit the form width for better readability
+          maxWidth: "600px", // Limit the form width for better readability
           width: "100%",
           boxSizing: "border-box",
         }}
       >
         <h1 style={{ textAlign: "center", marginBottom: "20px", color: "#2196F3" }}>
-          Generate Certificate
+          Get Your Certificate
         </h1>
         <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: "15px" }}>
@@ -98,16 +99,9 @@ function GenerateCertificate() {
           </div>
           <button
             type="submit"
-            style={{
-              backgroundColor: "#2196F3",
-              color: "#fff",
-              padding: "10px",
-              borderRadius: "4px",
-              cursor: "pointer",
-              width: "100%", // Make the button full width
-            }}
+            className="gcbtn"
           >
-            Submit
+            Generate Certificate
           </button>
         </form>
       </div>
